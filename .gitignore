@@ -1,0 +1,82 @@
+# ------------------------------
+# Python bytecode
+# ------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ------------------------------
+# C extensions
+# ------------------------------
+*.so
+
+# ------------------------------
+# Distribution / packaging
+# ------------------------------
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+MANIFEST
+
+# ------------------------------
+# Virtual environments
+# ------------------------------
+venv/
+env/
+.venv/
+ENV/
+
+# ------------------------------
+# Installer logs
+# ------------------------------
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ------------------------------
+# Unit test / coverage
+# ------------------------------
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+coverage.xml
+
+# ------------------------------
+# Type checkers
+# ------------------------------
+.mypy_cache/
+.pyre/
+.pytype/
+
+# ------------------------------
+# IDE / Editor
+# ------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ------------------------------
+# OS files
+# ------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Documentation builds
+# ------------------------------
+docs/_build/
+
+# ------------------------------
+# Jupyter
+# ------------------------------
+.ipynb_checkpoints
+
+# Key
+
+Key.txt
