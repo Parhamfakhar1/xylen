@@ -4,6 +4,7 @@ A minimal, async-first Python web framework with ultra-low latency and low memor
 
 ## ✨ Features
 
+
 - **Async-first** with ASGI native support  
 - **Ultra-low latency** and **minimal RAM usage**  
 - **Smart routing** with type-safe path parameters (`/user/{id:int}`)  
