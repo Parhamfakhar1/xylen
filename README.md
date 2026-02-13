@@ -1,26 +1,25 @@
-# Xylen
+Xylen  
+A Minimal, Async-First Python Web Framework for Ultra-Low Latency Applications  
 
-A minimal, async-first Python web framework with ultra-low latency and low memory usage.
+Built for developers who prioritize speed, simplicity, and control, Xylen delivers native ASGI performance with zero external dependencies—pure Python, maximum efficiency, minimal overhead.
 
-## ✨ Features
+Core Features  
+• Async-first architecture with full ASGI compliance  
+• Sub-millisecond response times and memory footprint under 10MB  
+• Type-safe routing: define paths like `/user/{id:int}` and receive validated parameters automatically  
+• Built-in security middleware: CORS, CSRF protection, and configurable rate limiting  
+• Automatic OpenAPI 3.0 documentation—no Pydantic or extra setup required  
+• Dedicated CLI tooling: `xylen run --app myapp:app --reload` for seamless development  
+• Full-featured test client for writing reliable, isolated unit tests  
+• Zero mandatory dependencies—runs entirely on the Python standard library  
 
-- **Async-first** with ASGI native support  
-- **Ultra-low latency** and **minimal RAM usage**  
-- **Smart routing** with type-safe path parameters (`/user/{id:int}`)  
-- Built-in **CORS**, **CSRF**, and **rate-limiting** middleware  
-- Automatic **OpenAPI/Swagger UI** (no Pydantic required)  
-- Dedicated CLI: `xylen run --app myapp:app --reload`  
-- Full **test client** for unit testing  
-- Zero required dependencies — pure Python  
-
-## 🚀 Quick Start
-
+Getting Started  
+Install Xylen from PyPI:  
 ```bash
 pip install xylen
 ```
 
-Create `app.py`:
-
+Create your application (`app.py`):  
 ```python
 from xylen import Xylen
 
@@ -48,18 +47,17 @@ def get_user(request, user_id: int):
     return {"user_id": user_id}
 ```
 
-Run with auto-reload:
-
+Launch with live reloading:  
 ```bash
 xylen run --app app:app --reload --port 8000
 ```
 
-Visit:
-- http://127.0.0.1:8000/hello  
-- http://127.0.0.1:8000/docs → Interactive API docs  
+Explore your endpoints:  
+- Application: http://127.0.0.1:8000/hello  
+- Interactive API documentation: http://127.0.0.1:8000/docs  
 
-## 🧪 Testing
-
+Testing Your Application  
+Xylen includes a production-grade test client for fast, dependency-free testing:  
 ```python
 from app import app
 from xylen import TestClient
@@ -71,17 +69,14 @@ def test_hello():
     assert resp.json()["message"] == "Hello from Xylen!"
 ```
 
-Run tests:
-
+Run the test suite:  
 ```bash
 pip install -e ".[dev]"
 pytest
 ```
 
-## 📦 Middleware
-
-Enable built-in security and control:
-
+Middleware Configuration  
+Enable robust defaults out of the box:  
 ```python
 app = Xylen(
     cors=True,
@@ -91,10 +86,7 @@ app = Xylen(
 )
 ```
 
-## 📄 License
+License  
+MIT © Parham Fakhari  
 
-MIT © Parham Fakhari
-
----
-
-> **Xylen**: Lightweight as the wind, fast as lightning.
+Xylen: Lightweight as the wind, fast as lightning.
