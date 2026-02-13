@@ -1,10 +1,9 @@
-# examples/basic.py
-from zephyrpy import zephyrpy
+from xylen import Xylen
 import os
 
-os.environ["zephyrpy_SECRET_KEY"] = "dev-secret-key-for-zephyrpy"
+os.environ["ZEPHYR_SECRET_KEY"] = "dev-secret-key-for-Xylen"
 
-app = zephyrpy(
+app = Xylen(
     cors=True,
     cors_config={
         "allow_origins": ["*"],
@@ -14,7 +13,6 @@ app = zephyrpy(
     rate_limit=True,
     rate_limit_config={"max_requests": 10, "window_seconds": 60},
 )
-
 
 @app.openapi(
     path="/hello",
@@ -28,16 +26,15 @@ app = zephyrpy(
                 "application/json": {
                     "schema": {
                         "type": "object",
-                        "properties": {"message": {"type": "string"}},
+                        "properties": {"message": {"type": "string"}}
                     }
                 }
-            },
+            }
         }
-    },
+    }
 )
 async def hello(request):
-    return {"message": "Hello from zephyrpy!"}
-
+    return {"message": "Hello from Xylen!"}
 
 @app.openapi(
     path="/user/{user_id:int}",
@@ -51,13 +48,13 @@ async def hello(request):
                 "application/json": {
                     "schema": {
                         "type": "object",
-                        "properties": {"user_id": {"type": "integer"}},
+                        "properties": {"user_id": {"type": "integer"}}
                     }
                 }
-            },
+            }
         },
-        404: {"description": "User not found"},
-    },
+        404: {"description": "User not found"}
+    }
 )
 def user_detail(request, user_id: int):
     return {"user_id": user_id}

@@ -1,31 +1,30 @@
-# zephyrpy
+# Xylen
 
 A minimal, async-first Python web framework with ultra-low latency and low memory usage.
 
 ## ✨ Features
-
 
 - **Async-first** with ASGI native support  
 - **Ultra-low latency** and **minimal RAM usage**  
 - **Smart routing** with type-safe path parameters (`/user/{id:int}`)  
 - Built-in **CORS**, **CSRF**, and **rate-limiting** middleware  
 - Automatic **OpenAPI/Swagger UI** (no Pydantic required)  
-- Dedicated CLI: `zephyrpy run --app myapp:app --reload`  
+- Dedicated CLI: `xylen run --app myapp:app --reload`  
 - Full **test client** for unit testing  
 - Zero required dependencies — pure Python  
 
 ## 🚀 Quick Start
 
 ```bash
-pip install zephyrpy
+pip install xylen
 ```
 
 Create `app.py`:
 
 ```python
-from zephyrpy import zephyrpy
+from xylen import Xylen
 
-app = zephyrpy(
+app = Xylen(
     cors=True,
     rate_limit=True,
     rate_limit_config={"max_requests": 100, "window_seconds": 60}
@@ -38,7 +37,7 @@ app = zephyrpy(
     responses={200: {"description": "A greeting message"}}
 )
 async def hello(request):
-    return {"message": "Hello from zephyrpy!"}
+    return {"message": "Hello from Xylen!"}
 
 @app.openapi(
     path="/user/{user_id:int}",
@@ -52,7 +51,7 @@ def get_user(request, user_id: int):
 Run with auto-reload:
 
 ```bash
-zephyrpy run --app app:app --reload --port 8000
+xylen run --app app:app --reload --port 8000
 ```
 
 Visit:
@@ -63,13 +62,13 @@ Visit:
 
 ```python
 from app import app
-from zephyrpy import TestClient
+from xylen import TestClient
 
 def test_hello():
     client = TestClient(app)
     resp = client.get("/hello")
     assert resp.status_code == 200
-    assert resp.json()["message"] == "Hello from zephyrpy!"
+    assert resp.json()["message"] == "Hello from Xylen!"
 ```
 
 Run tests:
@@ -84,7 +83,7 @@ pytest
 Enable built-in security and control:
 
 ```python
-app = zephyrpy(
+app = Xylen(
     cors=True,
     csrf=True,
     rate_limit=True,
@@ -98,4 +97,4 @@ MIT © Parham Fakhari
 
 ---
 
-> **zephyrpy**: Lightweight as the wind, fast as lightning.
+> **Xylen**: Lightweight as the wind, fast as lightning.

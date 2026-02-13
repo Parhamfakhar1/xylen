@@ -3,11 +3,11 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "zephyrpy"
-version = "1.0.0"
+name = "xylen"
+version = "1.1.0"
 description = "A minimal, async-first Python web framework with ultra-low latency and low memory usage."
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "Parham Fakhar", email = "parhamfakhari.nab2020@gmail.com"}
 ]
@@ -21,7 +21,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Topic :: Internet :: WWW/HTTP",
-    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Application Frameworks"
 ]
 keywords = ["web", "async", "asgi", "framework", "fast", "lightweight", "openapi", "swagger"]
 dependencies = []
@@ -36,17 +36,17 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Parhamfakhar1/zephyrpy"
-Repository = "https://github.com/Parhamfakhar1/zephyrpy"
-Documentation = "https://github.com/Parhamfakhar1/zephyrpy#readme"
-Changelog = "https://github.com/Parhamfakhar1/zephyrpy/releases"
+Homepage = "https://github.com/Parhamfakhar1/xylen"
+Repository = "https://github.com/Parhamfakhar1/xylen"
+Documentation = "https://github.com/Parhamfakhar1/xylen#readme"
+Changelog = "https://github.com/Parhamfakhar1/xylen/releases"
 
 [project.scripts]
-zephyrpy = "zephyrpy.cli:main"
+xylen = "xylen.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["zephyrpy*"]
+include = ["xylen*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -54,6 +54,6 @@ python_files = ["test_*.py"]
 python_classes = ["TestCase"]
 python_functions = ["test_*"]
 filterwarnings = [
-    "ignore::pytest.PytestCollectionWarning",
+    "ignore::pytest.PytestCollectionWarning"
 ]
 addopts = "-v --tb=short"

@@ -1,4 +1,4 @@
-# zephyrpy/request.py
+# Xylen/request.py
 class Request:
     def __init__(self, scope, receive):
         self.scope = scope
