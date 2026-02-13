@@ -2,7 +2,7 @@
 import sys
 import argparse
 import importlib
-from .app import xylen
+from .app import Xylen
 
 def main():
     parser = argparse.ArgumentParser(prog="xylen", description="Xylen Web Framework CLI")
