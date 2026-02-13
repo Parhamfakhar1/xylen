@@ -1,8 +1,8 @@
 # tests/test_app_integration.py
-from zephyr import Zephyr, TestClient
+from zephyrpy import zephyrpy, TestClient
 
 def test_full_app():
-    app = Zephyr(
+    app = zephyrpy(
         cors=True,
         cors_config={"allow_origins": ["*"]},
         rate_limit=False

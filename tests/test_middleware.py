@@ -1,10 +1,10 @@
 # tests/test_middleware.py
 import pytest
-from zephyr.app import Zephyr
-from zephyr.testclient import TestClient
+from zephyrpy.app import zephyrpy
+from zephyrpy.testclient import TestClient
 
 def test_cors_middleware():
-    app = Zephyr(cors=True, cors_config={"allow_origins": ["*"]})
+    app = zephyrpy(cors=True, cors_config={"allow_origins": ["*"]})
     
     @app.route("/test", methods=["GET"])
     def handler(request):
@@ -18,11 +18,11 @@ def test_cors_middleware():
 
 def test_rate_limiting(monkeypatch):
     # Mock time to simulate multiple requests over time
-    from zephyr.middleware.rate_limit import RateLimitMiddleware
+    from zephyrpy.middleware.rate_limit import RateLimitMiddleware
     times = iter([1000.0, 1000.1, 1000.2])
-    monkeypatch.setattr("zephyr.middleware.rate_limit.time.time", lambda: next(times))
+    monkeypatch.setattr("zephyrpy.middleware.rate_limit.time.time", lambda: next(times))
 
-    app = Zephyr(rate_limit=True, rate_limit_config={"max_requests": 2, "window_seconds": 10})
+    app = zephyrpy(rate_limit=True, rate_limit_config={"max_requests": 2, "window_seconds": 10})
 
     @app.route("/limited", methods=["GET"])
     def handler(request):

@@ -1,4 +1,4 @@
-# Zephyr
+# zephyrpy
 
 A minimal, async-first Python web framework with ultra-low latency and low memory usage.
 
@@ -9,22 +9,22 @@ A minimal, async-first Python web framework with ultra-low latency and low memor
 - **Smart routing** with type-safe path parameters (`/user/{id:int}`)  
 - Built-in **CORS**, **CSRF**, and **rate-limiting** middleware  
 - Automatic **OpenAPI/Swagger UI** (no Pydantic required)  
-- Dedicated CLI: `zephyr run --app myapp:app --reload`  
+- Dedicated CLI: `zephyrpy run --app myapp:app --reload`  
 - Full **test client** for unit testing  
 - Zero required dependencies — pure Python  
 
 ## 🚀 Quick Start
 
 ```bash
-pip install zephyr
+pip install zephyrpy
 ```
 
 Create `app.py`:
 
 ```python
-from zephyr import Zephyr
+from zephyrpy import zephyrpy
 
-app = Zephyr(
+app = zephyrpy(
     cors=True,
     rate_limit=True,
     rate_limit_config={"max_requests": 100, "window_seconds": 60}
@@ -37,7 +37,7 @@ app = Zephyr(
     responses={200: {"description": "A greeting message"}}
 )
 async def hello(request):
-    return {"message": "Hello from Zephyr!"}
+    return {"message": "Hello from zephyrpy!"}
 
 @app.openapi(
     path="/user/{user_id:int}",
@@ -51,7 +51,7 @@ def get_user(request, user_id: int):
 Run with auto-reload:
 
 ```bash
-zephyr run --app app:app --reload --port 8000
+zephyrpy run --app app:app --reload --port 8000
 ```
 
 Visit:
@@ -62,13 +62,13 @@ Visit:
 
 ```python
 from app import app
-from zephyr import TestClient
+from zephyrpy import TestClient
 
 def test_hello():
     client = TestClient(app)
     resp = client.get("/hello")
     assert resp.status_code == 200
-    assert resp.json()["message"] == "Hello from Zephyr!"
+    assert resp.json()["message"] == "Hello from zephyrpy!"
 ```
 
 Run tests:
@@ -83,7 +83,7 @@ pytest
 Enable built-in security and control:
 
 ```python
-app = Zephyr(
+app = zephyrpy(
     cors=True,
     csrf=True,
     rate_limit=True,
@@ -97,4 +97,4 @@ MIT © Parham Fakhari
 
 ---
 
-> **Zephyr**: Lightweight as the wind, fast as lightning.
+> **zephyrpy**: Lightweight as the wind, fast as lightning.

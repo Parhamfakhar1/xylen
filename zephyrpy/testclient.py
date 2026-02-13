@@ -1,4 +1,4 @@
-# zephyr/testclient.py
+# zephyrpy/testclient.py
 import json
 from urllib.parse import urlencode
 from .response import Response

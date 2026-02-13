@@ -1,5 +1,5 @@
 # tests/test_responses.py
-from zephyr.response import PlainTextResponse, JSONResponse
+from zephyrpy.response import PlainTextResponse, JSONResponse
 
 def test_plain_text_response():
     resp = PlainTextResponse("Hello", status_code=201)

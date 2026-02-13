@@ -1,4 +1,4 @@
-# zephyr/response.py
+# zephyrpy/response.py
 from typing import Dict, Any
 
 class Response:

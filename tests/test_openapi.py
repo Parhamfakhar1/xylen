@@ -1,9 +1,9 @@
 # tests/test_openapi.py
-from zephyr.app import Zephyr
-from zephyr.testclient import TestClient
+from zephyrpy.app import zephyrpy
+from zephyrpy.testclient import TestClient
 
 def test_openapi_json():
-    app = Zephyr()
+    app = zephyrpy()
 
     @app.openapi(
         path="/hello",
@@ -23,7 +23,7 @@ def test_openapi_json():
     assert "get" in data["paths"]["/hello"]
 
 def test_swagger_ui():
-    app = Zephyr()
+    app = zephyrpy()
     client = TestClient(app)
     response = client.get("/docs")
     assert response.status_code == 200

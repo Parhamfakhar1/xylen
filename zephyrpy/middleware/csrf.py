@@ -1,4 +1,4 @@
-# zephyr/middleware/csrf.py
+# zephyrpy/middleware/csrf.py
 import os
 import secrets
 import hashlib
@@ -13,7 +13,7 @@ def hash_token(token: str, secret: str) -> str:
 class CSRFMiddleware:
     def __init__(self, app, secret_key: str = None, cookie_name: str = "csrftoken", header_name: str = "X-CSRF-Token"):
         self.app = app
-        self.secret_key = secret_key or os.getenv("ZEPHYR_SECRET_KEY") or generate_csrf_token()
+        self.secret_key = secret_key or os.getenv("zephyrpy_SECRET_KEY") or generate_csrf_token()
         self.cookie_name = cookie_name
         self.header_name = header_name.lower().replace("-", "_")
 

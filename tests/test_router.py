@@ -1,5 +1,5 @@
 # tests/test_router.py
-from zephyr.router import Router
+from zephyrpy.router import Router
 
 def dummy_handler(request, **kwargs):
     return {"kwargs": kwargs}

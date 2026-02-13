@@ -1,10 +1,10 @@
 # examples/basic.py
-from zephyr import Zephyr
+from zephyrpy import zephyrpy
 import os
 
-os.environ["ZEPHYR_SECRET_KEY"] = "dev-secret-key-for-zephyr"
+os.environ["zephyrpy_SECRET_KEY"] = "dev-secret-key-for-zephyrpy"
 
-app = Zephyr(
+app = zephyrpy(
     cors=True,
     cors_config={
         "allow_origins": ["*"],
@@ -36,7 +36,7 @@ app = Zephyr(
     },
 )
 async def hello(request):
-    return {"message": "Hello from Zephyr!"}
+    return {"message": "Hello from zephyrpy!"}
 
 
 @app.openapi(

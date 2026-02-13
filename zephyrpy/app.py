@@ -1,4 +1,4 @@
-# zephyr/app.py
+# zephyrpy/app.py
 import asyncio
 import os
 from typing import Callable, Dict, Any, Optional
@@ -7,7 +7,7 @@ from .request import Request
 from .response import Response, PlainTextResponse, JSONResponse
 
 
-class Zephyr:
+class zephyrpy:
     def __init__(
         self,
         cors: bool = False,
@@ -19,7 +19,7 @@ class Zephyr:
     ):
         self.router = Router()
         self.openapi_info = {
-            "title": "Zephyr API",
+            "title": "zephyrpy API",
             "version": "1.0.0",
             "description": "A minimal, async-first Python web framework with low memory usage and ultra-low latency.",
         }
@@ -127,7 +127,7 @@ class Zephyr:
         <!DOCTYPE html>
         <html>
         <head>
-            <title>Swagger UI - Zephyr</title>
+            <title>Swagger UI - zephyrpy</title>
             <meta charset="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui.css" />
@@ -190,4 +190,4 @@ class Zephyr:
             return PlainTextResponse(str(result))
 
     def run(self, host="127.0.0.1", port=8000, reload=False):
-        raise RuntimeError("Use 'zephyr run --app your_module:app' instead.")
+        raise RuntimeError("Use 'zephyrpy run --app your_module:app' instead.")

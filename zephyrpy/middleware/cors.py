@@ -1,4 +1,4 @@
-# zephyr/middleware/cors.py
+# zephyrpy/middleware/cors.py
 class CORSMiddleware:
     def __init__(
         self,

@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "zephyr"
+name = "zephyrpy"
 version = "1.0.0"
 description = "A minimal, async-first Python web framework with ultra-low latency and low memory usage."
 readme = "README.md"
@@ -14,7 +14,6 @@ authors = [
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -37,17 +36,17 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Parhamfakhar1/zephyr"
-Repository = "https://github.com/Parhamfakhar1/zephyr"
-Documentation = "https://github.com/Parhamfakhar1/zephyr#readme"
-Changelog = "https://github.com/Parhamfakhar1/zephyr/releases"
+Homepage = "https://github.com/Parhamfakhar1/zephyrpy"
+Repository = "https://github.com/Parhamfakhar1/zephyrpy"
+Documentation = "https://github.com/Parhamfakhar1/zephyrpy#readme"
+Changelog = "https://github.com/Parhamfakhar1/zephyrpy/releases"
 
 [project.scripts]
-zephyr = "zephyr.cli:main"
+zephyrpy = "zephyrpy.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["zephyr*"]
+include = ["zephyrpy*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

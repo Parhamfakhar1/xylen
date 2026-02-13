@@ -1,4 +1,4 @@
-# zephyr/middleware/rate_limit.py
+# zephyrpy/middleware/rate_limit.py
 import time
 from collections import defaultdict, deque
 from ..response import PlainTextResponse

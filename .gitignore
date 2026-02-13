@@ -76,3 +76,7 @@ docs/_build/
 # Jupyter
 # ------------------------------
 .ipynb_checkpoints
+
+# Key
+
+Key.txt
