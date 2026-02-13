@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zephyr"
+version = "1.0.0"
+description = "A minimal, async-first Python web framework with ultra-low latency and low memory usage."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Parham Fakhar", email = "parhamfakhari.nab2020@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+keywords = ["web", "async", "asgi", "framework", "fast", "lightweight", "openapi", "swagger"]
+dependencies = []
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = [
+    "uvicorn>=0.20.0",
+    "pytest>=7.0",
+    "watchfiles>=0.20.0",
+    "httpx>=0.25.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/Parhamfakhar1/zephyr"
+Repository = "https://github.com/Parhamfakhar1/zephyr"
+Documentation = "https://github.com/Parhamfakhar1/zephyr#readme"
+Changelog = "https://github.com/Parhamfakhar1/zephyr/releases"
+
+[project.scripts]
+zephyr = "zephyr.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["zephyr*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["TestCase"]
+python_functions = ["test_*"]
+filterwarnings = [
+    "ignore::pytest.PytestCollectionWarning",
+]
+addopts = "-v --tb=short"
