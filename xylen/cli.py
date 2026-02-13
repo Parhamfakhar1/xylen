@@ -33,6 +33,7 @@ def resolve_import_string(import_str: str) -> str:
         module_name = file_path.stem
     else:
         module_name = module_part
+        sys.path.insert(0, os.getcwd())
 
     try:
         module = importlib.import_module(module_name)
